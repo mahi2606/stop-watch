@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Stopwatch Display Box */
+.stopwatch {
+  font-size: 4rem;
+  font-weight: 600;
+  padding: 30px 80px;
+  border-radius: 25px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.5),
+    -8px -8px 20px rgba(255, 255, 255, 0.05),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Optional border gradient shine effect */
+.stopwatch::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe, #43e97b);
+  z-index: -1;
+  filter: blur(4px);
+}
+
+/* Buttons Layout */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Shared Button Styles */
+button {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual Button Colors */
+button:nth-child(1) { /* Start */
+  background: linear-gradient(145deg, #00c851, #007e33);
+}
+
+button:nth-child(1):hover {
+  background: linear-gradient(145deg, #007e33, #00c851);
+}
+
+button:nth-child(2) { /* Stop */
+  background: linear-gradient(145deg, #ff4444, #cc0000);
+}
+
+button:nth-child(2):hover {
+  background: linear-gradient(145deg, #cc0000, #ff4444);
+}
+
+button:nth-child(3) { /* Reset */
+  background: linear-gradient(145deg, #ff8800, #ffbb33);
+  color: #fff;
+}
+
+button:nth-child(3):hover {
+  background: linear-gradient(145deg, #ffbb33, #ff8800);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .stopwatch {
+    font-size: 2.8rem;
+    padding: 20px 40px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
